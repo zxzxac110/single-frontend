@@ -1,0 +1,263 @@
+// 全局通用样式
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+body {
+  color: #000;
+}
+
+input,
+button {
+  outline: none;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: transparent;
+}
+
+.white--bg {
+  background: #fff;
+}
+
+.gray--bg {
+  background: #F5F5F5 !important;
+}
+
+.primary--text {
+  color: #333333;
+}
+
+.blue--text {
+  color: #2278D0;
+}
+
+.gray--text {
+  color: #999999 !important;
+}
+
+.black--text {
+  color: #333333;
+}
+
+.white--text {
+  color: #ffffff !important;
+}
+
+.green--text {
+  color: #46BF51;
+}
+
+.warning--text {
+  color: #FF9900;
+}
+
+.deep-purple--text {
+  color: #9932CD;
+}
+
+.deep-blue--text {
+  color: #0000FF;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.red--text {
+  color: #FE5D5D
+}
+
+.blue-link {
+  cursor: pointer;
+  color: #409EFF;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-space-between {
+  justify-content: space-between !important;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.bw-icon {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.single-line-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.line-overflow-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: hidden;
+  overflow: hidden;
+  /*word-wrap:break-word*/
+  word-break: break-all;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 3px;
+  background: #ccc;
+}
+
+*::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  border-radius: 10px;
+  background: transparent;
+}
+
+// 边距
+.back-gauge(15);
+
+.back-gauge(@n, @i: 1) when (@i =< @n) {
+  .mr-@{i} {
+    margin-right: @i*4px;
+  }
+
+  .ml-@{i} {
+    margin-left: @i*4px;
+  }
+
+  .mt-@{i} {
+    margin-top: @i*4px;
+  }
+
+  .mb-@{i} {
+    margin-bottom: @i*4px  !important;
+  }
+
+  .mx-@{i} {
+    margin-left: @i*4px;
+    margin-right: @i*4px;
+  }
+
+  .my-@{i} {
+    margin-top: @i*4px;
+    margin-bottom: @i*4px;
+  }
+
+  .ma-@{i} {
+    margin: @i*4px;
+  }
+
+  .pr-@{i} {
+    padding-right: @i*4px;
+  }
+
+  .pl-@{i} {
+    padding-left: @i*4px;
+  }
+
+  .pt-@{i} {
+    padding-top: @i*4px;
+  }
+
+  .pb-@{i} {
+    padding-bottom: @i*4px;
+  }
+
+  .px-@{i} {
+    padding-left: @i*4px;
+    padding-right: @i*4px;
+  }
+
+  .py-@{i} {
+    padding-top: @i*4px;
+    padding-bottom: @i*4px;
+  }
+
+  .pa-@{i} {
+    padding: @i*4px;
+  }
+
+  .back-gauge(@n, (@i + 1));
+}
+
+.px2px(@name, @px) {
+  @{name}: round(@px / 2) * 1;
+
+  [data-dpr="2"] & {
+    @{name}: @px * 1;
+  }
+
+  [data-dpr="3"] & {
+    @{name}: round(@px / 2 * 3) * 1;
+  }
+}
